@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --parchment: #f5e6d3;
+  --cream: #faf3e0;
+  --dusty-rose: #d4a373;
+  --brown: #8b5e3c;
+  --coffee: #5c4033;
+  --paper: rgba(250, 243, 224, 0.88);
+  --shadow: rgba(92, 64, 51, 0.16);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(212, 163, 115, 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgba(139, 94, 60, 0.08), transparent 22%),
+    linear-gradient(180deg, #faf3e8 0%, #f4eadc 100%);
+  color: var(--coffee);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(139, 94, 60, 0.2);
+}
+
+.glass-card {
+  background: var(--paper);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 18px 50px var(--shadow);
+}
+
+.journal-heading {
+  font-family: var(--font-playfair), Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+.journal-serif {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.journal-script {
+  font-family: var(--font-caveat), cursive;
+}
+
+.paper-texture {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(92, 64, 51, 0.05), transparent 18%),
+    radial-gradient(circle at 80% 10%, rgba(139, 94, 60, 0.05), transparent 14%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0));
+}
+
+.paper-grid {
+  background-image:
+    linear-gradient(rgba(92, 64, 51, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(92, 64, 51, 0.06) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.paper-shadow {
+  box-shadow: 0 15px 35px rgba(92, 64, 51, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.tape {
+  position: relative;
+}
+
+.tape::before {
+  content: "";
+  position: absolute;
+  inset: -0.35rem 35% auto 35%;
+  height: 1.4rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(250, 243, 224, 0.75), rgba(230, 204, 178, 0.95));
+  box-shadow: 0 8px 18px rgba(92, 64, 51, 0.12);
+  transform: rotate(-2deg);
+}
+
+.torn-top {
+  clip-path: polygon(0 5%, 5% 0, 12% 4%, 18% 1%, 24% 5%, 31% 0, 39% 4%, 47% 1%, 54% 5%, 62% 0, 70% 4%, 79% 1%, 87% 5%, 94% 0, 100% 5%, 100% 100%, 0 100%);
+}
+
+.torn-edge {
+  clip-path: polygon(0 0, 94% 0, 100% 6%, 96% 13%, 100% 20%, 95% 28%, 100% 38%, 96% 47%, 100% 57%, 95% 66%, 100% 76%, 97% 86%, 100% 100%, 0 100%);
+}
+
+.paper-noise {
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(92, 64, 51, 0.06), transparent 18%),
+    radial-gradient(circle at 80% 30%, rgba(139, 94, 60, 0.08), transparent 16%),
+    radial-gradient(circle at 45% 80%, rgba(92, 64, 51, 0.05), transparent 12%);
+}

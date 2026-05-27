@@ -12,14 +12,14 @@
     "prisma:studio": "prisma studio"
   },
   "dependencies": {
-    "next": "15.1.6",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "next-auth": "^5.0.0-beta.25",
-    "@prisma/client": "^6.2.1",
     "@prisma/adapter-neon": "^6.19.3",
+    "@prisma/client": "^6.2.1",
     "bcryptjs": "^2.4.3",
-    "framer-motion": "^11.11.9"
+    "framer-motion": "^11.11.9",
+    "next": "^16.2.6",
+    "next-auth": "^5.0.0-beta.25",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",

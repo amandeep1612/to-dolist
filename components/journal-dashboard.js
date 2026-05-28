@@ -134,12 +134,12 @@ export default function JournalDashboard({ initialEntries }) {
         />
       ))}
 
-      <div className="relative grid gap-5 xl:grid-cols-[1.12fr_0.88fr]">
+      <div className="relative grid gap-5 xl:grid-cols-[1.08fr_0.92fr]">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
-          className="relative overflow-hidden rounded-[2.5rem] border border-[#8b5e3c]/20 bg-[#faf3e0] shadow-[0_22px_50px_rgba(92,64,51,0.14)]"
+          className="relative overflow-hidden rounded-[2.5rem] border border-[#8b5e3c]/20 bg-[#faf3e0] shadow-[0_22px_50px_rgba(92,64,51,0.14)] soft-panel-hover"
         >
           <div className="absolute inset-0 paper-noise opacity-70" />
           <div className="absolute -left-4 top-8 h-28 w-28 rounded-full bg-[#d4a373]/10 blur-2xl" />
@@ -147,32 +147,32 @@ export default function JournalDashboard({ initialEntries }) {
           <ScrapTape className="right-10 top-8 rotate-[8deg]" />
 
           <div className="relative p-5 sm:p-6 lg:p-7">
-            <div className="flex flex-wrap items-start justify-between gap-4">
+            <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-start">
               <div className="min-w-0 max-w-xl">
                 <p className="journal-script text-2xl text-[#8b5e3c]">Dear diary,</p>
-                <h2 className="journal-heading mt-2 text-3xl leading-[1.05] text-[#5c4033] sm:text-4xl lg:text-5xl">
+                <h2 className="journal-heading mt-2 text-balance text-3xl leading-[1.08] text-[#5c4033] sm:text-4xl lg:text-5xl">
                   Capture the soft, private moments of the day.
                 </h2>
                 <p className="mt-4 max-w-2xl text-base leading-7 text-[#6f5847]">
                   A scrapbook-like space for memories, moods, notes, and little emotional snapshots.
                 </p>
               </div>
-              <div className="rounded-[1.75rem] border border-[#8b5e3c]/15 bg-white/70 px-4 py-3 shadow-[0_12px_24px_rgba(92,64,51,0.1)]">
+              <div className="self-start rounded-[1.75rem] border border-[#8b5e3c]/15 bg-white/70 px-4 py-3 shadow-[0_12px_24px_rgba(92,64,51,0.1)]">
                 <p className="text-[11px] uppercase tracking-[0.28em] text-[#8b5e3c]">today's mood</p>
                 <p className="journal-script mt-1 text-4xl text-[#5c4033]">{entry.mood}</p>
               </div>
             </div>
 
-            <div className="mt-6 grid gap-5 lg:grid-cols-[1fr_0.92fr]">
+            <div className="mt-6 grid gap-4 lg:grid-cols-[1.04fr_0.96fr]">
               <motion.div
-                whileHover={{ rotate: -1, y: -4 }}
-                className="relative rounded-[2.35rem] border border-[#d4a373]/25 bg-[#fffdf8] p-4 shadow-[0_18px_30px_rgba(92,64,51,0.12)]"
+                whileHover={{ rotate: -0.5, y: -3 }}
+                className="relative rounded-[2.35rem] border border-[#d4a373]/25 bg-[#fffdf8] p-4 shadow-[0_18px_30px_rgba(92,64,51,0.12)] soft-panel-hover"
               >
                 <div className="absolute left-4 top-4 h-8 w-24 rotate-[-3deg] rounded-full bg-[#e6ccb2]/80" />
                 <div className="absolute right-4 top-5 h-10 w-10 rotate-[10deg] rounded-full border border-[#d4a373]/35 bg-white/80" />
                 <div className="overflow-hidden rounded-[1.8rem] border border-[#d4a373]/20 bg-[linear-gradient(180deg,#fbf6ed,#f4eadc)] p-4">
-                  <div className="mb-3 flex items-center justify-between">
-                    <span className="journal-script text-2xl text-[#8b5e3c]">memory page</span>
+                  <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+                    <span className="journal-script text-2xl leading-none text-[#8b5e3c]">memory page</span>
                     <span className="rounded-full bg-[#faf3e0] px-3 py-1 text-[11px] font-semibold text-[#8b5e3c] ring-1 ring-[#d4a373]/20">
                       pinned paper
                     </span>
@@ -182,11 +182,11 @@ export default function JournalDashboard({ initialEntries }) {
                       <div className="flex h-28 w-24 shrink-0 items-end justify-center rounded-[1.15rem] border border-[#d4a373]/20 bg-[linear-gradient(180deg,#fffdf7,#f5e6d3)] shadow-[0_14px_24px_rgba(92,64,51,0.08)]">
                         <div className="mb-4 h-16 w-16 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(139,94,60,0.22),rgba(139,94,60,0.06))]" />
                       </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-xs uppercase tracking-[0.28em] text-[#8b5e3c]">reflection prompt</p>
-                      <p className="journal-heading mt-2 text-2xl leading-tight text-[#5c4033] sm:text-3xl">
-                        {entry.reflection || prompts[0]}
-                      </p>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-xs uppercase tracking-[0.28em] text-[#8b5e3c]">reflection prompt</p>
+                        <p className="journal-heading mt-2 text-balance text-2xl leading-tight text-[#5c4033] sm:text-3xl">
+                          {entry.reflection || prompts[0]}
+                        </p>
                         <p className="mt-3 text-sm leading-6 text-[#6f5847]">
                           Write the memory, keep the feeling, and let the page remember it with you.
                         </p>
@@ -196,9 +196,9 @@ export default function JournalDashboard({ initialEntries }) {
                 </div>
               </motion.div>
 
-              <div className="space-y-4">
-                <div className="rounded-[2rem] border border-[#d4a373]/25 bg-[#fffdf8] p-4 shadow-[0_12px_24px_rgba(92,64,51,0.1)]">
-                  <div className="flex items-center justify-between">
+              <div className="grid gap-4">
+                <div className="rounded-[2rem] border border-[#d4a373]/25 bg-[#fffdf8] p-4 shadow-[0_12px_24px_rgba(92,64,51,0.1)] soft-panel-hover">
+                  <div className="flex items-center justify-between gap-3">
                     <p className="text-xs uppercase tracking-[0.24em] text-[#8b5e3c]">mood tracker</p>
                     <span className="journal-script text-2xl text-[#5c4033]">{entry.mood}</span>
                   </div>
@@ -220,9 +220,9 @@ export default function JournalDashboard({ initialEntries }) {
                   </div>
                 </div>
 
-                <div className="rounded-[2rem] border border-[#d4a373]/25 bg-[linear-gradient(180deg,#fffefb,#f7eddc)] p-4 shadow-[0_12px_24px_rgba(92,64,51,0.1)]">
+                <div className="rounded-[2rem] border border-[#d4a373]/25 bg-[linear-gradient(180deg,#fffefb,#f7eddc)] p-4 shadow-[0_12px_24px_rgba(92,64,51,0.1)] soft-panel-hover">
                   <p className="text-xs uppercase tracking-[0.24em] text-[#8b5e3c]">autosave</p>
-                  <div className="mt-3 flex items-center justify-between">
+                  <div className="mt-3 flex items-center justify-between gap-3">
                     <p className="text-sm text-[#6f5847]">
                       {savedAt ? `Saved at ${savedAt}` : "Drafts are saved automatically"}
                     </p>
@@ -237,9 +237,9 @@ export default function JournalDashboard({ initialEntries }) {
               </div>
             </div>
 
-            <div className="mt-6 grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
-              <div className="rounded-[2.35rem] border border-[#d4a373]/25 bg-[#fffdf8] p-4 shadow-[0_18px_30px_rgba(92,64,51,0.1)]">
-                <div className="flex items-center justify-between">
+            <div className="mt-5 grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="rounded-[2.35rem] border border-[#d4a373]/25 bg-[#fffdf8] p-4 shadow-[0_18px_30px_rgba(92,64,51,0.1)] soft-panel-hover">
+                <div className="flex items-center justify-between gap-3">
                   <p className="text-xs uppercase tracking-[0.24em] text-[#8b5e3c]">writing mode</p>
                   <span className="journal-script text-xl text-[#5c4033]">cozy desk</span>
                 </div>
@@ -285,9 +285,9 @@ export default function JournalDashboard({ initialEntries }) {
                 </div>
               </div>
 
-              <div className="space-y-4">
-                <div className="rounded-[2.35rem] border border-[#d4a373]/25 bg-[#fffdf8] p-4 shadow-[0_18px_30px_rgba(92,64,51,0.1)]">
-                  <div className="flex items-center justify-between">
+              <div className="grid gap-4">
+                <div className="rounded-[2.35rem] border border-[#d4a373]/25 bg-[#fffdf8] p-4 shadow-[0_18px_30px_rgba(92,64,51,0.1)] soft-panel-hover">
+                  <div className="flex items-center justify-between gap-3">
                     <p className="text-xs uppercase tracking-[0.24em] text-[#8b5e3c]">photo support</p>
                     <p className="journal-script text-2xl text-[#5c4033]">polaroid</p>
                   </div>
@@ -305,7 +305,7 @@ export default function JournalDashboard({ initialEntries }) {
                   </div>
                 </div>
 
-                <div className="rounded-[2.35rem] border border-[#d4a373]/25 bg-[#fffdf8] p-4 shadow-[0_18px_30px_rgba(92,64,51,0.1)]">
+                <div className="rounded-[2.35rem] border border-[#d4a373]/25 bg-[#fffdf8] p-4 shadow-[0_18px_30px_rgba(92,64,51,0.1)] soft-panel-hover">
                   <p className="text-xs uppercase tracking-[0.24em] text-[#8b5e3c]">scrapbook timeline</p>
                   <div className="mt-4 space-y-3">
                     <AnimatePresence>
@@ -326,13 +326,13 @@ export default function JournalDashboard({ initialEntries }) {
                               openEntry(item);
                             }
                           }}
-                          className={`relative w-full cursor-pointer rounded-[1.7rem] border border-[#d4a373]/25 bg-[linear-gradient(180deg,#fffefb,#f6ead9)] p-4 text-left shadow-[0_12px_24px_rgba(92,64,51,0.1)] transition hover:-translate-y-0.5 ${index % 2 ? "translate-x-2" : ""}`}
+                          className={`relative w-full cursor-pointer rounded-[1.7rem] border border-[#d4a373]/25 bg-[linear-gradient(180deg,#fffefb,#f6ead9)] p-4 text-left shadow-[0_12px_24px_rgba(92,64,51,0.1)] transition hover:-translate-y-0.5 ${index % 2 ? "translate-x-1" : ""}`}
                         >
                           <div className="absolute right-3 top-3 h-3 w-3 rounded-full bg-[#d4a373]/60" />
                           <div className="flex items-start justify-between gap-3">
                             <div className="min-w-0">
                               <p className="journal-script text-2xl text-[#8b5e3c]">{item.mood}</p>
-                              <h4 className="journal-heading mt-1 break-words text-2xl leading-tight text-[#5c4033]">
+                              <h4 className="journal-heading mt-1 break-words text-xl leading-tight text-[#5c4033] sm:text-2xl">
                                 {item.title || "Untitled page"}
                               </h4>
                             </div>
@@ -357,9 +357,9 @@ export default function JournalDashboard({ initialEntries }) {
             </div>
 
             {pinned ? (
-              <div className="mt-6 rounded-[2.35rem] border border-dashed border-[#d4a373]/35 bg-white/70 p-5 shadow-[0_12px_24px_rgba(92,64,51,0.08)]">
+              <div className="mt-6 rounded-[2.35rem] border border-dashed border-[#d4a373]/35 bg-white/70 p-5 shadow-[0_12px_24px_rgba(92,64,51,0.08)] soft-panel-hover">
                 <p className="journal-script text-3xl text-[#8b5e3c]">Pinned page</p>
-                <p className="journal-heading mt-2 text-3xl text-[#5c4033]">{pinned.title || "Untitled page"}</p>
+                <p className="journal-heading mt-2 text-balance text-2xl leading-tight text-[#5c4033] sm:text-3xl">{pinned.title || "Untitled page"}</p>
                 <p className="mt-2 max-w-2xl text-sm leading-6 text-[#6f5847]">
                   This page stays on the board like a favorite scrapbook clipping.
                 </p>

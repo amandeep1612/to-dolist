@@ -80,12 +80,12 @@ export default function AppShell({ children, user }) {
 
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#faf3e8_0%,#f3e8d7_100%)] text-[#5c4033]">
-      <div className="mx-auto grid min-h-screen max-w-[1600px] grid-cols-1 lg:grid-cols-[290px_1fr]">
-        <aside className="sticky top-0 hidden h-screen border-r border-[#d4a373]/20 bg-[rgba(250,243,224,0.82)] px-5 py-6 backdrop-blur lg:block">
+      <div className="mx-auto grid min-h-screen max-w-[1600px] grid-cols-1 lg:grid-cols-[300px_1fr]">
+        <aside className="sticky top-0 hidden h-screen border-r border-[#d4a373]/20 bg-[rgba(250,243,224,0.82)] px-5 py-5 backdrop-blur lg:block">
           <div className="flex h-full flex-col rounded-[2.25rem] border border-white/70 bg-[rgba(255,253,248,0.8)] p-4 shadow-[0_18px_50px_rgba(92,64,51,0.08)]">
-            <div className="mb-6 rounded-[1.8rem] border border-[#d4a373]/20 bg-[#faf3e0] p-4">
+            <div className="mb-5 rounded-[1.8rem] border border-[#d4a373]/20 bg-[#faf3e0] p-4">
               <p className="text-xs uppercase tracking-[0.3em] text-[#8b5e3c]">Velora</p>
-              <h1 className="journal-heading mt-2 text-4xl text-[#5c4033]">Library desk</h1>
+              <h1 className="journal-heading mt-2 text-4xl leading-[0.96] text-[#5c4033]">Library desk</h1>
               <p className="mt-2 text-sm leading-6 text-[#7a624f]">
                 {user?.name || user?.email || "Welcome back"}
               </p>
@@ -99,14 +99,14 @@ export default function AppShell({ children, user }) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`group flex items-center gap-3 rounded-[1.35rem] px-4 py-3 transition ${
+                    className={`group flex items-center gap-3 rounded-[1.35rem] px-4 py-3 text-sm transition ${
                       active
                         ? "bg-[#8b5e3c] text-[#faf3e0] shadow-lg shadow-[#8b5e3c]/20"
                         : "bg-transparent text-[#5c4033] hover:bg-[#faf3e0]"
                     }`}
                   >
                     <Icon className="h-5 w-5" />
-                    <span className="text-sm font-medium">{item.label}</span>
+                    <span className="font-medium leading-tight">{item.label}</span>
                   </Link>
                 );
               })}
@@ -114,7 +114,7 @@ export default function AppShell({ children, user }) {
 
             <div className="mt-auto space-y-3 rounded-[1.7rem] border border-[#d4a373]/20 bg-[#faf3e0] p-4">
               <p className="text-xs uppercase tracking-[0.24em] text-[#8b5e3c]">Current page</p>
-              <p className="journal-script mt-2 text-3xl text-[#5c4033]">
+              <p className="journal-script mt-2 text-2xl leading-tight text-[#5c4033]">
                 {navItems.find((item) => item.href === pathname)?.label || "Dashboard"}
               </p>
               <button
@@ -130,14 +130,14 @@ export default function AppShell({ children, user }) {
 
         <div className="flex min-h-screen flex-col">
           <header className="sticky top-0 z-20 border-b border-[#d4a373]/20 bg-[rgba(250,243,224,0.82)] px-4 py-3 backdrop-blur lg:hidden">
-            <div className="flex items-center justify-between rounded-[1.5rem] border border-white/70 bg-[rgba(255,253,248,0.92)] px-4 py-3 shadow-[0_12px_30px_rgba(92,64,51,0.08)]">
+            <div className="flex items-center justify-between gap-3 rounded-[1.5rem] border border-white/70 bg-[rgba(255,253,248,0.92)] px-4 py-3 shadow-[0_12px_30px_rgba(92,64,51,0.08)]">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.28em] text-[#8b5e3c]">Velora</p>
-                <p className="journal-heading text-2xl text-[#5c4033]">
+                <p className="journal-heading text-2xl leading-tight text-[#5c4033]">
                   {navItems.find((item) => item.href === pathname)?.label || "Dashboard"}
                 </p>
               </div>
-              <div className="flex flex-wrap items-center gap-2">
+              <div className="flex flex-wrap items-center justify-end gap-2">
                 <Link href="/login" className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[#5c4033] ring-1 ring-[#fb6f92]/20">
                   Login
                 </Link>
@@ -166,7 +166,7 @@ export default function AppShell({ children, user }) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.25 }}
-                className="mx-auto max-w-[1320px]"
+                className="mx-auto w-full max-w-[1320px]"
               >
                 {children}
               </motion.div>

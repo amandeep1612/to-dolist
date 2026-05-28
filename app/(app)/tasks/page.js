@@ -69,16 +69,16 @@ export default async function TasksPage() {
             </div>
           </div>
 
-          <div className="mt-5 grid gap-3 lg:grid-cols-[1fr_0.75fr]">
+          <div className="mt-5 grid gap-4 xl:grid-cols-[1fr_0.72fr]">
             <div className="grid gap-3">
-              <div className="rounded-[2rem] border border-[#fb6f92]/22 bg-white/85 p-4 shadow-[0_14px_28px_rgba(92,64,51,0.08)]">
+              <div className="rounded-[2rem] border border-[#fb6f92]/22 bg-white/85 p-4 shadow-[0_14px_28px_rgba(92,64,51,0.08)] soft-panel-hover">
                 <p className="text-xs uppercase tracking-[0.24em] text-[#c45d79]">Goals</p>
                 <div className="mt-3 min-h-28 rounded-[1.6rem] border border-dashed border-[#fb6f92]/25 bg-[linear-gradient(180deg,#fff7f9,#fff0f3)] p-4 text-sm leading-7 text-[#7a624f]">
                   Set one gentle goal, one brave goal, and one thing you’re proud to finish today.
                 </div>
               </div>
 
-              <div className="rounded-[2rem] border border-[#fb6f92]/22 bg-white/85 p-4 shadow-[0_14px_28px_rgba(92,64,51,0.08)]">
+              <div className="rounded-[2rem] border border-[#fb6f92]/22 bg-white/85 p-4 shadow-[0_14px_28px_rgba(92,64,51,0.08)] soft-panel-hover">
                 <p className="text-xs uppercase tracking-[0.24em] text-[#c45d79]">Top priorities</p>
                 <div className="mt-3 space-y-2">
                   {topPriorities.length ? topPriorities.map((task, index) => (
@@ -98,8 +98,8 @@ export default async function TasksPage() {
             </div>
 
             <div className="grid gap-4">
-              <div className="rounded-[2.35rem] border border-[#fb6f92]/22 bg-[linear-gradient(180deg,#fff,#fff0f3)] p-5 shadow-[0_16px_30px_rgba(92,64,51,0.08)]">
-                <div className="flex items-center justify-between">
+              <div className="rounded-[2.35rem] border border-[#fb6f92]/22 bg-[linear-gradient(180deg,#fff,#fff0f3)] p-5 shadow-[0_16px_30px_rgba(92,64,51,0.08)] soft-panel-hover">
+                <div className="flex items-center justify-between gap-3">
                   <p className="text-xs uppercase tracking-[0.24em] text-[#c45d79]">To Do</p>
                   <span className="journal-script text-3xl text-[#fb6f92]">♡</span>
                 </div>
@@ -125,20 +125,20 @@ export default async function TasksPage() {
                 </div>
               </div>
 
-              <div className="rounded-[2.35rem] border border-[#fb6f92]/22 bg-[linear-gradient(180deg,#fff,#fff0f3)] p-5 shadow-[0_16px_30px_rgba(92,64,51,0.08)]">
+              <div className="rounded-[2.35rem] border border-[#fb6f92]/22 bg-[linear-gradient(180deg,#fff,#fff0f3)] p-5 shadow-[0_16px_30px_rgba(92,64,51,0.08)] soft-panel-hover">
                 <p className="text-xs uppercase tracking-[0.24em] text-[#c45d79]">Notes</p>
                 <div className="mt-4 min-h-44 rounded-[1.6rem] border border-dashed border-[#fb6f92]/25 bg-[linear-gradient(180deg,#fff7f9,#fff0f3)] p-4 text-sm leading-7 text-[#7a624f]">
                   Jot reminders, tiny wins, and little thoughts here. The full task editor below keeps the data synced to Neon.
                 </div>
               </div>
-            </div>
 
-            <div className="rounded-[2.35rem] border border-[#fb6f92]/22 bg-[linear-gradient(180deg,#fff,#fff0f3)] p-5 shadow-[0_16px_30px_rgba(92,64,51,0.08)]">
-              <p className="text-xs uppercase tracking-[0.24em] text-[#c45d79]">Goals tracker</p>
-              <p className="journal-heading mt-3 text-3xl text-[#5c4033]">Stay gentle. Stay consistent.</p>
-              <p className="mt-2 text-sm leading-6 text-[#7a624f]">
-                {journalEntries.length ? `Recent journal pages: ${journalEntries.length}` : "You can pair this planner with journal pages any time."}
-              </p>
+              <div className="rounded-[2.35rem] border border-[#fb6f92]/22 bg-[linear-gradient(180deg,#fff,#fff0f3)] p-5 shadow-[0_16px_30px_rgba(92,64,51,0.08)] soft-panel-hover">
+                <p className="text-xs uppercase tracking-[0.24em] text-[#c45d79]">Goals tracker</p>
+                <p className="journal-heading mt-3 text-2xl leading-tight text-[#5c4033] sm:text-3xl">Stay gentle. Stay consistent.</p>
+                <p className="mt-2 text-sm leading-6 text-[#7a624f]">
+                  {journalEntries.length ? `Recent journal pages: ${journalEntries.length}` : "You can pair this planner with journal pages any time."}
+                </p>
+              </div>
             </div>
           </div>
         </div>
